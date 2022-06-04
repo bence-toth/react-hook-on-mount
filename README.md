@@ -38,7 +38,7 @@ const ComponentWithOnMount = () => {
   return (
     <figure>
       <blockquote>{inspiration.quote}</blockquote>
-      <figcaption>— {quote.author}</figcaption>
+      <figcaption>— {inspiration.author}</figcaption>
     </figure>
   );
 };
