@@ -1,6 +1,6 @@
 {
   "name": "react-hook-on-mount",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook to run an effect only on the first render",
   "keywords": [
     "react",
