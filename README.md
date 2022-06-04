@@ -48,7 +48,7 @@ const ComponentWithOnMount = () => {
 
 In React v18 [a new strict mode behaviour was introduced](https://reactjs.org/blog/2022/03/29/react-v18.html#new-strict-mode-behaviors), which in development mode will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount.
 
-In development mode, this will result in components using the `useEffect` hook like this to run the effect twice on when the component mounts:
+In development mode, this will result in components using the `useEffect` hook like this to run the effect twice when the component mounts:
 
 ```jsx
 const ComponentWithOnMountEffect = () => {
