@@ -44,7 +44,7 @@ const ComponentWithOnMount = () => {
 };
 ```
 
-## Inspiration
+## Motivation
 
 In React v18 [a new strict mode behaviour was introduced](https://reactjs.org/blog/2022/03/29/react-v18.html#new-strict-mode-behaviors), which in development mode will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount.
 
