@@ -1,4 +1,4 @@
-# react-hook-on-mount 1️⃣
+# react-hook-on-mount 🏆
 
 A React hook to run an effect only on the first render.
 
