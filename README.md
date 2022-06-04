@@ -26,7 +26,9 @@ const ComponentWithOnMount = () => {
   const [inspiration, setInspiration] = useState();
 
   useOnMount(() => {
-    fetch("https://api.goprogram.ai/inspiration");
+    fetch("https://api.goprogram.ai/inspiration")
+      .then((result) => result.json())
+      .then(setInspiration);
   });
 
   if (!inspiration) {
@@ -41,6 +43,29 @@ const ComponentWithOnMount = () => {
   );
 };
 ```
+
+## Inspiration
+
+In React v18 [a new strict mode behaviour was introduced](https://reactjs.org/blog/2022/03/29/react-v18.html#new-strict-mode-behaviors), which in development mode will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount.
+
+In development mode, this will result in components using the `useEffect` hook like this to run the effect twice on when the component mounts:
+
+```jsx
+const ComponentWithOnMountEffect = () => {
+  useEffect(() => {
+    fetch("https://api.goprogram.ai/inspiration")
+      .then(
+        // ...
+      )
+  });
+
+  return (
+    // ...
+  );
+};
+```
+
+To avoid this, components using the `useEffect` hook to run an effect only once when the component mounts are recommended to use the `useOnMount` hook instead, which will, in addition to effect the hook on the first mount, will make sure that the effect never runs again.
 
 ## Contributions
 
